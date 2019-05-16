@@ -167,7 +167,7 @@ function DigitalZoom() {
 						digitalZoom.onzoomout();
 					}
 
-					if (digitalZoom.zoomFactor + step <= digitalZoom.maxZoomFactor) {
+					if (digitalZoom.zoomFactor + step - 0.1 <= digitalZoom.maxZoomFactor) {
 						digitalZoom.zoomFactor += step;
 
 						if (digitalZoom.zoomFactor >= 1) {
