@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Zoom</title>
+	<meta charset="utf-8"/>
+	<script src="./zoom.js"></script>
+	<style>
+		.container {
+			width: 200px;
+			height: 200px;
+			overflow: hidden;
+			border: 1px solid black;
+		}
+		
+		.container .zoom {
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<img class="zoom" src="zoom.png">
+	</div>
+	
+	<script>
+		const digitalZoom = new DigitalZoom();
+		digitalZoom.init({
+			node: document.querySelector(".zoom"),
+			onzoomin: () => {
+				console.log("zoomin");
+			},
+			onzoomout: () => {
+				console.log("zoomout");
+			}
+		});		
+	</script>	
+</body>
+</html>
