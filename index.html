@@ -1,41 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Zoom</title>
-	<meta charset="utf-8"/>
-	<script src="./zoom.js"></script>
-	<style>
-		.container {
-			width: 320px;
-			height: 240px;
-			overflow: hidden;
-			border: 1px solid black;
-			display: flex;
-			justify-content: center;
-			background-color: grey;
-		}
+    <title>Zoom</title>
+    <meta charset="utf-8"/>
+    <script src="./zoom.js"></script>
+    <style>
+        .container {
+            width: 320px;
+            height: 240px;
+            overflow: hidden;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            background-color: grey;
+        }
 
-		.container .zoom {
-			height: 100%;
-		}
-	</style>
+        .container .zoom {
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
-	<div class="container">
-		<img class="zoom" src="zoom.png">
-	</div>
+<div class="container">
+    <img class="zoom" src="zoom.png">
+</div>
 
-	<script>
-		const digitalZoom = new DigitalZoom();
-		digitalZoom.init({
-			node: document.querySelector(".zoom"),
-			onzoomin: () => {
-				console.log("zoomin");
-			},
-			onzoomout: () => {
-				console.log("zoomout");
-			}
-		});
-	</script>
+<script>
+    function zoom_init() {
+        const digitalZoom = new DigitalZoom();
+        digitalZoom.init({
+            node: document.querySelector(".zoom"),
+            onzoomin: () => {
+                console.log("zoomin");
+            },
+            onzoomout: () => {
+                console.log("zoomout");
+            }
+        });
+
+    }
+
+    window.addEventListener('load', zoom_init);
+</script>
 </body>
 </html>
